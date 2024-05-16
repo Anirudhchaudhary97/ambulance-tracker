@@ -88,14 +88,11 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+This web app assists hospitals by bridging the communication gap between Ambulance driver and hospital management especially during emergency cases. This web app successfully tracks and alerts hospital management by which delay in treatment of patients can be reduced. This could potentially save lives.
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
+This will be very useful at times of emergency cases which assists in timely treatment of patients. This works by tracking ambulance location(coordinates) in real-time.
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
+
 
 Use the `BLANK_README.md` to get started.
 
@@ -109,7 +106,6 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 * [![Next][Next.js]][Next-url]
 * [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
 * [![Angular][Angular.io]][Angular-url]
 * [![Svelte][Svelte.dev]][Svelte-url]
 * [![Laravel][Laravel.com]][Laravel-url]
@@ -172,21 +168,26 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [ ] Admin-	Admin panel
 - [ ] User- user panel 
 
-# Features phase-1
+# User Features (Patients, Public)
 
-- [ ] 1. Authentication (LOGIN REGISTER) (password hashing, JWT, db save details)
-- [ ] 2. KYC (image upload)
-- [ ] 3. Admin approve KYC (wallet features unlock) (multi user login) (sidebar ->0. dashboard 1.  kyc validate (send email) 2. add institution )
+- [ ] 1.User registration and login
+- [ ] 2.Emergency Request:
+    button to request an ambulance immediately.
+   Fill in details such as location, nature of emergency, and contact information.
 
-- [ ] 1. 100 balance  
-- [ ] 2. 4 sections: (multiple layout)
-    2.1 Dashboard (graph and reward point)
-        -  bar graph to display daily expenditure
-        -  expense tracker 
-    2.2 Transactions (limit) - usera-userb   usera-institution
-    2.3 Statement/History (pdf generate)
-- [ ] 3. real time cash update (web socket)
-- [ ] 4. map to display transaction location (google map)
+- [ ] 3.Real-time ambulance tracking
+
+- [ ] 4.Booking an ambulance with emergency details  
+- [ ] 5.Notifications and alerts
+
+- [ ] 6.Able to ambulance Status: 
+               See the current status of the ambulance (e.g., en route, arrived, on standby).
+    Updates on ambulance's journey progress and any changes in route.
+
+- [ ] 7.History and Feedback:
+         View history of previous ambulance requests.
+         Provide feedback on the service received
+
 
 
 
