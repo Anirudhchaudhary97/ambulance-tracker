@@ -189,14 +189,41 @@ _For more examples, please refer to the [Documentation](https://example.com)_
          Provide feedback on the service received
 
 
+# For Ambulance Providers(driver):
+- [x] 1.Registration and verification
+- [x] 2.Real-time location tracking
+- [x] 3.Navigation to the emergency location
+
+- [x] 4.Status updates (available, en route, on-site)
+- [x] 5.Route optimization
+
+  
 
 
-# phase-2
-- [x] 1. integrate esewa
-- [x] 2. google login
-- [x] 3. support
-- [x] 4. deployment
-- [x] 4. 
+
+
+
+# Admin Features
+- [x] 1. Dashboard:
+             Overview of all active and past ambulance requests.
+             Real-time tracking of all ambulances.
+
+- [x] 2. Ambulance Management:
+              Add, edit, or remove ambulance details.
+              Assign ambulances to requests based on availability and location.
+              Update the status of ambulances (e.g., available, in service, maintenance)
+
+
+  ## Future Features
+
+- [x] 1. Monitor parameters like driver’s speed.
+- [x] 2. Monitor non-emergency speeding to improve driver safety.
+- [x] 3. Maintain recommended temperature for drugs or medicines.
+- [x] 4. Track asset history to suggest optimal routes.
+- [x] 5. Give an option to the patient to communicate the medical concern.
+- [x] 6. Maintain recommended temperature for drugs or medicines.
+- [x] 7.  In-app chat or call support
+
 
 ---- route protect------ 
 --- 
