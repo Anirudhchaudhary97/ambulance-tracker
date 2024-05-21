@@ -94,7 +94,7 @@ import {Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, Navba
   ];
 
   return (
-    <Navbar className="bg-[#610726] text-white p-4"
+    <Navbar className="bg-white text-black p-4 shadow-md"
       isBordered
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
@@ -134,12 +134,12 @@ import {Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, Navba
 
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex ">
-        <Button as={Link} color="warning" href="#" variant="flat" className="text-white">
+        <Button as={Link}  href="#" variant="flat" className="bg-[#920B3A] text-white font-bold">
             Login
           </Button>
         </NavbarItem>
         <NavbarItem>
-          <Button as={Link} color="warning" href="#" variant="flat" className="text-white">
+          <Button as={Link} href="#" variant="flat"  className="bg-[#920B3A] text-white font-bold">
             Sign Up
           </Button>
         </NavbarItem>

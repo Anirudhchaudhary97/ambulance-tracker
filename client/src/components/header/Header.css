@@ -1,0 +1,39 @@
+.header {
+    background-image: url("../../../public/bg1.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    color: white;
+}
+
+.bg-overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Add a dark overlay for better text visibility */
+    padding: 20px;
+    height: 100%; /* Ensure the overlay covers the entire height */
+}
+
+.text-white {
+    color: white;
+}
+
+.location-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.location-input {
+    width: 100%;
+    max-width: 300px; /* Adjust width for better alignment */
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    transition: background-color 0.3s ease; /* Smooth transition for button hover */
+}
