@@ -118,7 +118,6 @@ const Header = () => {
       {/* Form Section */}
       <div className="text-white flex flex-col justify-center items-center w-full md:w-1/2 bg-overlay">
         <div className="text-center px-4 md:px-8 ">
-          {/* <h2 className="text-2xl md:text-4xl font-bold mb-4">Check Availability</h2> */}
           <div className="location-form mt-8 flex flex-col">
             <input
               type="text"

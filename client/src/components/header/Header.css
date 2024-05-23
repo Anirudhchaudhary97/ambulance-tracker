@@ -23,6 +23,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 16px;
+    
 }
 
 .location-input {
@@ -36,4 +37,9 @@
 
 button {
     transition: background-color 0.3s ease; /* Smooth transition for button hover */
+}
+
+
+button:hover {
+    background-color: #cc3700; /* Change hover color for button */
 }
