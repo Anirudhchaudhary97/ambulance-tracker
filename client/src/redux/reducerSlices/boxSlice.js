@@ -9,7 +9,7 @@ const initialState={
     backgroundColor:"red",
     width:40,
     height:40,
-    radius:0
+    radius:'0%'
     
     
 }
@@ -21,18 +21,27 @@ const boxSlice= createSlice({
     name:"box" ,
     reducers:{
         changeHeight(state){
-            state.height=state.height+5
+            if(state.radius === '50%'){
+                const newHeight = state.height + 5
+                state.width = newHeight
+                state.height = newHeight
+              }else{
+                state.height=state.height+5
+              }
         },
         changeWidth(state){
-            state.width=state.width+5
+            if(state.radius === '50%'){
+                const newWidth = state.width + 5
+                state.width = newWidth
+                state.height = newWidth
+              }else{
+                state.width=state.width + 5
+              }
         },
         changeShape(state){
-            if(state.radius==0){
-            
-                state.radius=state.radius=50
-            }else{
-                state.radius=0
-            }
+        
+        state.radius='50%'
+        state.width=state.height
              
         },
         changeBackground(state,action){
