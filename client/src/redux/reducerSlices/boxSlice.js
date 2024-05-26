@@ -9,7 +9,9 @@ const initialState={
     backgroundColor:"red",
     width:40,
     height:40,
-    radius:'0%'
+    radius:'0%',
+    top:0,
+    right:0
     
     
 }
@@ -46,11 +48,23 @@ const boxSlice= createSlice({
         },
         changeBackground(state,action){
             state.backgroundColor=action.payload
+        },
+
+        changePosition(state, actions){
+          const{value, alignment}=actions.payload
+            if(alignment==="horizontal"){
+               state.right=value
+               state.top=0
+            } else{
+              state.top=value;
+              state.right=0
+            }
         }
+         
         
     }
 })
 
 
-export const { changeHeight,changeWidth,changeShape, changeBackground} = boxSlice.actions
+export const { changeHeight,changeWidth,changeShape, changeBackground,changePosition} = boxSlice.actions
 export default boxSlice.reducer
