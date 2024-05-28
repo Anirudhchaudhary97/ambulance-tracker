@@ -29,7 +29,7 @@ const boxSlice= createSlice({
                 state.height = newHeight
               }else{
                 state.height=state.height+5
-              }
+              } 
         },
         changeWidth(state){
             if(state.radius === '50%'){
