@@ -12,7 +12,6 @@ export default function Home() {
    <NavBar/>
    <Header/>
    <MainSection/>
-  <h1>this is home page</h1>
  </div>
         
   );

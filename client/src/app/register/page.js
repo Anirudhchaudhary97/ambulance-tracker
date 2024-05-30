@@ -1,11 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import { Input, Select, SelectItem, Button } from "@nextui-org/react";
+import Link from "next/link";
 
 const Register = () => {
   const [role, setRole] = useState("user");
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
 
@@ -53,9 +53,15 @@ const Register = () => {
             />
           </div>
           <div className="flex w-full flex-wrap md:flex-nowrap">
-            <Select label="Register As" labelPlacement="outside" size="lg">
-              <SelectItem>User</SelectItem>
-              <SelectItem>Driver</SelectItem>
+          <Select
+              label="Register As"
+              labelPlacement="outside"
+              size="lg"
+              value={role}
+              onChange={(e) => setRole(e.target.value)}
+            >
+              <SelectItem value="user">User</SelectItem>
+              <SelectItem value="driver">Driver</SelectItem>
             </Select>
           </div>
           <div className="flex w-full flex-wrap md:flex-nowrap justify-center items-center mt-4">
@@ -66,9 +72,9 @@ const Register = () => {
         </form>
         <p className="mt-4 text-center">
           Already have an account?{" "}
-          <a href="/login" className="text-blue-600">
+          <Link href="/login" className="text-blue-600">
             Login
-          </a>
+          </Link>
         </p>
       </div>
     </div>
