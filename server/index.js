@@ -4,25 +4,10 @@ const app = express()
 require('dotenv').config()
 const port=process.env.PORT
 
-const userList=[
-  
-    {
-      id:1,
-      name:'anirudh',
-      age:"24"
-    },
-     {
-      id:2,
-      name:'sanzay',
-      age:"24"
-    },
-     {
-      id:3,
-      name:'suraj',
-      age:"24"
-    }
-  
-]
+
+//Database connection
+const dbConnect = require('./src/db/connection')
+dbConnect()
 
 
 app.get('/', (req, res) => {
