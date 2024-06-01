@@ -59,6 +59,14 @@ const boxSlice= createSlice({
               state.top=value;
               state.right=0
             }
+        },
+        reset(state){
+         
+          state.width=40,
+          state.height=40,
+          state.radius='0%',
+          state.top=0,
+          state.right=0
         }
          
         
@@ -66,5 +74,5 @@ const boxSlice= createSlice({
 })
 
 
-export const { changeHeight,changeWidth,changeShape, changeBackground,changePosition} = boxSlice.actions
+export const { changeHeight,changeWidth,changeShape, changeBackground,changePosition,reset} = boxSlice.actions
 export default boxSlice.reducer

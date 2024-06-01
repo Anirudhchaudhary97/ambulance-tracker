@@ -5,6 +5,7 @@ import {
   changeShape,
   changeBackground,
   changePosition,
+  reset
 } from "@/redux/reducerSlices/boxSlice";
 import { Button, Input } from "@nextui-org/react";
 import React, { useState } from "react";
@@ -107,6 +108,9 @@ const box = () => {
             color="primary"
           >
             shiftBottom
+          </Button>
+          <Button onClick={() => dispatch(reset())} color="primary">
+            Reset
           </Button>
           </div>
         </div>

@@ -1,28 +1,13 @@
-import { configureStore,combineReducers, Tuple } from "@reduxjs/toolkit";
-import boxSlice from "../reducerSlices/boxSlice";
-import logger from "redux-logger";
-import storage from 'redux-persist/lib/storage';
-import { persistReducer, persistStore } from 'redux-persist';
 
+//configureStore without persistStore
 
-const persistConfig = {
-    key: 'root',
-    storage,
-  }
+import { configureStore } from '@reduxjs/toolkit'
+import boxSlice from '../reducerSlices/boxSlice'
 
-  const rootReducer = combineReducers({ 
-    box: boxSlice,
-    
-  })
-
-  const persistedReducer = persistReducer(persistConfig,rootReducer)
-
-const store= configureStore({
-   
-    reducer:persistedReducer,
-     middleware:()=>new Tuple(logger)    
-    
-    
+ const store = configureStore({
+  reducer: {
+    box:boxSlice
+  },
 })
+
 export default store
-export const persistor = persistStore(store)
