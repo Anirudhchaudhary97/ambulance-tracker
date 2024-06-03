@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useFormik } from "formik";
 
 import * as Yup from 'yup';
+import NavBar from "@/components/navBar/NavBar";
  
 
 const SignupSchema = Yup.object().shape({
@@ -37,9 +38,11 @@ const Register = () => {
     },
   });
   return (
+   <>
+   <NavBar/>
     <div className="min-h-screen flex items-center justify-center bg-gray-400">
       <div className="bg-white p-5 rounded-lg shadow-md w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-6 text-center">Register</h2>
+        {/* <h2 className="text-2xl font-bold mb-6 text-center">Register</h2> */}
         <form onSubmit={formik.handleSubmit}>
           <div className="flex flex-col w-full flex-wrap md:flex-nowrap gap-4">
             <Input
@@ -109,7 +112,7 @@ const Register = () => {
             </Select>
           </div>
           <div className="flex w-full flex-wrap md:flex-nowrap justify-center items-center mt-4">
-            <Button type="submit" size="lg" color="primary" >
+            <Button type="submit" size="lg" color="primary" className="w-full" >
               Register
             </Button>
           </div>
@@ -122,6 +125,7 @@ const Register = () => {
         </p>
       </div>
     </div>
+    </>
   );
 };
 

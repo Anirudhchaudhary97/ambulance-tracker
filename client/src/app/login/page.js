@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { Input, Select, SelectItem, Button } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
+import Register from "../register/page";
+import NavBar from "@/components/navBar/NavBar";
 
 const Login = () => {
   const [password, setPassword] = useState("");
@@ -15,6 +17,8 @@ const Login = () => {
   };
 
   return (
+    <>
+     <NavBar/>
     <div className="min-h-screen flex items-center justify-around bg-gray-400">
       <div className="bg-white p-5 rounded-lg shadow-md w-full max-w-md">
         <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
@@ -56,6 +60,7 @@ const Login = () => {
         </p>
       </div>
     </div>
+    </>
   );
 };
 
