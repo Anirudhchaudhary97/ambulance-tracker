@@ -21,7 +21,7 @@ const { Schema } = mongoose;
 
 const userSchema = new Schema({
   fullName:String,
-  phone:String,
+  phoneNumber:String,
   email:String,
   password:String,
   role:{
@@ -35,9 +35,19 @@ const User= mongoose.model("User",userSchema)
 module.exports =User;
 
 app.post("/register", async(req,res)=>{
- await User.create(req.body)
-   console.log(req.body)
-      res.send("ok")
+  //check if user is exist or not
+  const phoneExist= await User.exists({phoneNumber:req.body.phoneNumber})
+  const emailExist= await User.exists({email:req.body.email})
+  // if  user exist then 
+  if(phoneExist){
+       return res.json({msg:"Phone Number is taken"})
+  }
+  else if(emailExist){
+    return res.json({msg:"Email is taken"})
+}
+  // if user doesnot exit then create new user
+  await User.create(req.body)
+      res.json({msg:"User Register"})
 })
 
 

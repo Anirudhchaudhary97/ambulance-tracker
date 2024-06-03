@@ -101,7 +101,7 @@ const Register = () => {
               labelPlacement="outside"
               size="lg"
               name="role"
-               onChange={(e) => formik.setFieldValue('role', e.target.value)}
+               onChange={formik.handleChange}
               value={formik.values.role}
             >
               <SelectItem value="user">User</SelectItem>
@@ -109,7 +109,7 @@ const Register = () => {
             </Select>
           </div>
           <div className="flex w-full flex-wrap md:flex-nowrap justify-center items-center mt-4">
-            <Button type="submit" size="lg" color="primary">
+            <Button type="submit" size="lg" color="primary" >
               Register
             </Button>
           </div>
