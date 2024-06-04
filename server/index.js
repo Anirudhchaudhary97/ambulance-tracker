@@ -4,6 +4,9 @@ const app = express()
 require('dotenv').config()
 const port=process.env.PORT||8000
 
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
 // Middleware for parsing JSON bodies
 app.use(express.json());
 
@@ -35,10 +38,14 @@ const User= mongoose.model("User",userSchema)
 module.exports =User;
 
 app.post("/register", async(req,res)=>{
-  //check if user is exist or not
+
+   const hashPassword= await bcrypt.hash(req.body.password,saltRounds)
+    req.body.password=hashPassword
+  
+
   const phoneExist= await User.exists({phoneNumber:req.body.phoneNumber})
   const emailExist= await User.exists({email:req.body.email})
-  // if  user exist then 
+
   if(phoneExist){
        return res.json({msg:"Phone Number is taken"})
   }
@@ -51,6 +58,26 @@ app.post("/register", async(req,res)=>{
 })
 
 
+
+app.post('/login',async(req,res)=>{
+      
+      // 1. check if user is register by checking their phoneNumber 
+    const user= await User.findOne({phoneNumber:req.body.phoneNumber})
+  
+    if(user){
+      // 2. if user exist then comapre the password
+      const isMatched= await bcrypt.compare(req.body.password, user.password);
+      if(isMatched){
+          res.json({msg:"Authorized user"})
+      }else{
+        res.json({msg:"Invalid Password"})
+      }
+    }
+    else{
+      res.json({msg:"PhoneNumber doesnot exist"})
+    }
+})
+ 
 app.get("/users",async(req,res)=>{
     const data= await User.find()
     res.json(data)
