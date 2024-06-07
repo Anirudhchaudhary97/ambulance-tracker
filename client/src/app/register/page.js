@@ -34,9 +34,22 @@ const Register = () => {
     },
     validationSchema:SignupSchema,
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      // alert(JSON.stringify(values, null, 2));
+      console.log(values)
+      registerUser(values)
+
     },
   });
+
+  const registerUser = async(values)=>{
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(values)
+  };
+  const response = await fetch('http://localhost:8000/register', requestOptions);
+
+  }
   return (
    <>
    <NavBar/>
