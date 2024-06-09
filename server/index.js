@@ -45,9 +45,9 @@ app.post("/register", async (req, res) => {
   const emailExist = await User.exists({ email: req.body.email });
 
   if (phoneExist) {
-    return res.json({ msg: "Phone Number is taken" });
+    return res.status(409).json({ msg: "Phone Number is taken" });
   } else if (emailExist) {
-    return res.json({ msg: "Email is taken" });
+    return res.status(409).json({ msg: "Email is taken" });
   }
   // if user doesnot exit then create new user
   await User.create(req.body);
@@ -66,10 +66,10 @@ app.post("/login", async (req, res) => {
 
       res.json({ msg: "Authorized user", token });
     } else {
-      res.json({ msg: "Invalid Password" });
+      res.status(401).json({ msg: "Invalid Password" });
     }
   } else {
-    res.json({ msg: "PhoneNumber doesnot exist" });
+    res.status(401).json({ msg: "PhoneNumber doesnot exist" });
   }
 });
 

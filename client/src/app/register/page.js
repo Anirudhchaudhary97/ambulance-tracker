@@ -7,6 +7,8 @@ import { useFormik } from "formik";
 
 import * as Yup from 'yup';
 import NavBar from "@/components/navBar/NavBar";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
  
 
 const SignupSchema = Yup.object().shape({
@@ -24,6 +26,7 @@ const SignupSchema = Yup.object().shape({
 });
 
 const Register = () => {
+  const router=useRouter()
   const formik = useFormik({
     initialValues: {
       fullName: "",
@@ -48,7 +51,14 @@ const Register = () => {
       body: JSON.stringify(values)
   };
   const response = await fetch('http://localhost:8000/register', requestOptions);
-
+       const data= await response.json()
+       if(response.status=="200"){
+        toast.success(data.msg)
+        router.push("/login")
+       } else{
+        toast.error(data.msg)
+       }
+      //  alert(data.msg)
   }
   return (
    <>
@@ -120,8 +130,8 @@ const Register = () => {
                onChange={formik.handleChange}
               value={formik.values.role}
             >
-              <SelectItem value="user">User</SelectItem>
-              <SelectItem value="driver">Driver</SelectItem>
+              <SelectItem value="user" key="user">User</SelectItem>
+              <SelectItem value="driver" key="driver">Driver</SelectItem>
             </Select>
           </div>
           <div className="flex w-full flex-wrap md:flex-nowrap justify-center items-center mt-4">
