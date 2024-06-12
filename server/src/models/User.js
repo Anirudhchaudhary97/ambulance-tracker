@@ -1,26 +1,21 @@
 
 
-// const mongoose=require("mongoose")
-// const { Schema } = mongoose;
+// defining schema
 
-// const userSchema = new Schema({
-//   name:{
-//     type:String,
-//     require:true
-//   },
-//   phone:{
-//      type:Number,
-//      require:true
-//   },
-//   email:{
-//     type:String
-//   },
-//   date:{
-//     type:Date,
-//     default:Date.now,
-//   }
-  
-// });
+const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
-// const User= mongoose.model("User",userSchema)
-// module.exports =User;
+const userSchema = new Schema({
+  fullName: String,
+  phoneNumber: String,
+  email: String,
+  password: String,
+  role: {
+    type: String,
+    enum: ["driver", "user","admin"],
+    default: "user",
+  },
+});
+
+const User = mongoose.model("User", userSchema);
+module.exports = User;
