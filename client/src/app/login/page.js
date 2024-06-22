@@ -9,11 +9,14 @@ import NavBar from "@/components/navBar/NavBar";
 import { useFormik } from "formik";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { setLoginDetails } from "@/redux/reducerSlices/userSlice";
+import { useDispatch } from "react-redux";
 
 
 
 const Login = () => {
   const router=useRouter()
+   const dispatch= useDispatch()
   const formik = useFormik({
     initialValues: {
       phoneNumber: "",
@@ -38,7 +41,15 @@ const Login = () => {
        const data= await response.json()
        if(response.status=="200"){
         toast.success(data.msg)
-         router.push("/box")
+       dispatch(setLoginDetails(data))
+         if(data.user.role==="driver"){
+             router.push("/dashboard")
+         } else if(data.user.role==="admin") {
+               router.push("/admin-dashboard")
+         }
+         else{
+           router.push("/")
+         }
        } else{
         toast.error(data.msg)
        }

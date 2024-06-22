@@ -1,0 +1,25 @@
+{
+    "admin": [
+        {"id": 1, "name": "Dashboard", "link": "/dashboard"},
+        {"id": 2, "name": "Manage Ambulances", "link": "/manage-ambulances"},
+        {"id": 3, "name": "User Management", "link": "/user-management"},
+        {"id": 4, "name": "Reports", "link": "/reports"},
+        {"id": 5, "name": "Settings", "link": "/settings"},
+        {"id":5, "name": "Driver KYC", "link": "/driver-kyc"}
+    ],
+    "user": [
+        {"id": 1, "name": "Dashboard", "link": "/dashboard"},
+        {"id": 1, "name": "Home", "link": "/"},
+        {"id": 2, "name": "Book Ambulance", "link": "/book-ambulance"},
+        {"id": 3, "name": "Track Ambulance", "link": "/track-ambulance"},
+        {"id": 4, "name": "Booking History", "link": "/booking-history"},
+        {"id": 5, "name": "Profile", "link": "/profile"}
+    ],
+    "driver": [
+        {"id": 1, "name": "Dashboard", "link": "/dashboard"},
+        {"id": 2, "name": "Current Trip", "link": "/current-trip"},
+        {"id": 3, "name": "Trip History", "link": "/trip-history"},
+        {"id": 4, "name": "Profile", "link": "/profile"},
+        {"id": 5, "name": "Settings", "link": "/settings"}
+    ]
+}
