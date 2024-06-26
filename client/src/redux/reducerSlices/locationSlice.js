@@ -13,10 +13,13 @@ const locationSlice = createSlice({
     changePickupAdress(state, actions) {
          state.pickUpAdress=actions.payload
     },
+    changePickUpCord(state,actions){
+      state.pickUpCord=actions.payload
+    }
 
    
   },
 })
 
-export const{ changePickupAdress } = locationSlice.actions
+export const{ changePickupAdress,changePickUpCord} = locationSlice.actions
 export default locationSlice.reducer

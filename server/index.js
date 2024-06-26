@@ -15,9 +15,12 @@ const dbConnect = require("./src/db/connection");
 
 dbConnect();
 
+
 const userRoute=require("./src/routes/user")
+const hospitalRoute=require("./src/routes/hospital")
 
 app.use(userRoute)
+app.use(hospitalRoute)
 
 
 

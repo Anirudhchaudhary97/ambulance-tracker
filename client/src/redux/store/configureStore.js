@@ -26,13 +26,15 @@ import storage from 'redux-persist/lib/storage';
 import { persistReducer, persistStore } from 'redux-persist';
 import userSlice from '../reducerSlices/userSlice';
 import locationSlice from '../reducerSlices/locationSlice';
+import hospitalSlice from '../reducerSlices/hospitalSlice';
 const persistConfig = {
     key: 'root',
     storage,
   }
   const rootReducer = combineReducers({ 
     user: userSlice,
-    location:locationSlice
+    location:locationSlice,
+    hospital:hospitalSlice
 
   })
 
